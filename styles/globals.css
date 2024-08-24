@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@400&family=Josefin+Sans:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.checkbox:checked ~ .checkmark {
+  background-color: #7c5dfa;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.tooltiptext {
+  visibility: hidden;
+}
+
+.chart-bar:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltiptext::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.gradient {
+  position: relative;
+  background-image: repeating-linear-gradient(90deg, #59c5dd, #6c47ff, #59c5dd);
+  z-index: 1;
+  background-position-x: 0;
+  background-size: 200%;
+  background-clip: text;
+  animation: gradimate 3s linear infinite;
+}
+
+@keyframes gradimate {
+  0% {
+    background-position-x: 0;
+  }
+  50% {
+    background-position-x: 100%;
+  }
+  100% {
+    background-position-x: 200%;
+  }
+}
